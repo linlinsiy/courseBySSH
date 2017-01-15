@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.jwxt.model.student.entity.Student" table="student">
+		<id name="stuId" type="java.lang.Integer">
+			<column name="stu_id" length="6" />
+			<generator class="increment" />
+		</id>
+		<property name="stuPwd" type="java.lang.String">
+			<column name="stu_pwd" length="20"/>
+		</property>
+		<property name="stuName" type="java.lang.String">
+			<column name="stu_name" length="50"/>
+		</property>
+		<property name="stuGender" type="java.lang.Boolean">
+			<column name="stu_gender"/>
+		</property>		
+		<property name="stuBirth" type="java.util.Date">
+			<column name="stu_birth" length="10" />
+		</property>
+		<property name="stuClass" type="java.lang.String">
+			<column name="stu_class" length="7"></column>
+		</property>
+		<property name="stuPic" type="java.lang.String">
+			<column name="stu_pic" length="100" />
+		</property>
+	</class>
+
+</hibernate-mapping>
+	
