@@ -67,4 +67,11 @@ public class LoginAction {
 		map.put("loginResult", loginResult);
 		return "forward:/WEB-INF/jsp/loginUI.jsp";
 	}
+	
+	//注销、退出
+	@RequestMapping(value="/logout")
+	public String logout(ModelMap map){
+		map.remove(Constant.STUDENT);
+		return "forward:/WEB-INF/jsp/loginUI.jsp";
+	}
 }

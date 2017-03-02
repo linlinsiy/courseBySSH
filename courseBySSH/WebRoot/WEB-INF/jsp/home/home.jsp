@@ -75,7 +75,7 @@
                     <td align="center"><img src="${ctx}/images/home/help.png" width="12" height="17"  /></td>
                     <td align="left"><a href="javascript:void(0);">帮助</a></td>
                     <td align="center"><img src="${ctx}/images/home/exit.png" width="14" height="14"   /></td>
-                    <td align="left" valign="middle" ><a href="${ctx }/sys/login_logout.action">退出</a></td>
+                    <td align="left" valign="middle" ><a href="${ctx }/login/logout.action">退出</a></td>
                 </tr>
             </table>
         </td>
@@ -85,7 +85,7 @@
 <!-- 导航{ -->
 <div class="menu">
     <ul class="clearfix">
-        <li class="hover"><a href="javascript:void(0);">工作主页</a></li>
+        <li class="hover"><a href="javascript:void(0);">个人主页</a></li>
         <li><a href="javascript:void(0);">行政管理</a></li>
         <li><a href="javascript:void(0);">后勤服务</a></li>
         <li><a href="javascript:void(0);">在线学习</a></li>       
@@ -106,9 +106,9 @@
                 <tr>
                     <td width="76" height="100" align="center" valign="middle">
                         <div class="left-tx">
-                            <s:if test="%{#session.SYS_USER.headImg != null && #session.SYS_USER.headImg != ''}">
+                            <c:if test="%{#session.SYS_USER.headImg != null && #session.SYS_USER.headImg != ''}">
                             	<img src="${ctx}/upload/<s:property value='#session.SYS_USER.headImg'/>" width="70" height="70" />
-                            </s:if><s:else>
+                            </c:if><s:else>
 								<img src="${ctx}/images/home/gs09.png" width="70" height="70" />
                         	</s:else>
                         </div>
@@ -119,7 +119,7 @@
                             <td colspan="2" style=" font-weight:bold; color:#3a7daa;"><s:property value="#session.SYS_USER.name"/></td>
                         </tr>
                         <tr>
-                            <td colspan="2">所属部门：<s:property value="#session.SYS_USER.dept"/></td>
+                            <td colspan="2">班级：${SYS_STUDENT.stuClass }</td>
                         </tr>
                     </table>
                     </td>
