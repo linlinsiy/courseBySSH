@@ -1,5 +1,7 @@
 package com.jwxt.model.student.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -18,6 +20,12 @@ public class StudentServiceImpl extends BaseServiceImpl<Student> implements Stud
 	public void setUserDao(StudentDao studentDao) {
 		super.setBaseDao(studentDao);
 		this.studentDao = studentDao;
+	}
+
+	@Override
+	public List<Student> findStudentsByStuIdAndStuPwd(int stuId, String stuPwd) {
+		List<Student> list = studentDao.findStudentsByStuIdAndStuPwd(stuId,stuPwd);
+		return list;
 	}
 
 

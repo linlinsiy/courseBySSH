@@ -70,7 +70,7 @@
                     <td align="center"></td>
                     <td align="left"></td>
                     <td align="right">
-                        <a><b></b><font color="red">欢迎您，<s:property value="#session.SYS_USER.name"/>&nbsp;</font></a>
+                        <a><b></b><font color="red">欢迎您，${SYS_STUDENT.stuName }&nbsp;</font></a>
                     </td>
                     <td align="center"><img src="${ctx}/images/home/help.png" width="12" height="17"  /></td>
                     <td align="left"><a href="javascript:void(0);">帮助</a></td>

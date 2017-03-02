@@ -20,14 +20,14 @@ public class StudentAction {
 		System.out.println("---action.save:"+student);
 		studentService.save(student);
 		map.addAttribute("student", student);
-		return "forward:/jsp/test/main.jsp";
+		return "forward:/WEB-INF/jsp/test/main.jsp";
 	}
 	@RequestMapping(value="/find")
 	public String find(int id,ModelMap map){
 		Student student = studentService.findObjectById(id);
 		map.addAttribute("student", student);
 		System.out.println("---action.find:"+student);
-		return "forward:/jsp/test/main.jsp";
+		return "forward:/WEB-INF/jsp/test/main.jsp";
 	}
 	
 }
