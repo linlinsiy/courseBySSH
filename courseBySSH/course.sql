@@ -14,3 +14,11 @@ create table student(
 );
 insert into student(stu_name,stu_pwd) values('林思远','123456');
 select * from student;
+
+create table lesson(
+	les_id int(4) zerofill primary key auto_increment,
+	les_name varchar(50),
+	les_time varchar(100)
+);
+insert into lesson(les_name,les_time) values('高等数学','一1,3;三5,6');
+select * from lesson;

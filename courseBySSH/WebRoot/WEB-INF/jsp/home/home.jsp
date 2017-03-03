@@ -86,8 +86,8 @@
 <div class="menu">
     <ul class="clearfix">
         <li class="hover"><a href="javascript:void(0);">个人主页</a></li>
-        <li><a href="javascript:void(0);">行政管理</a></li>
-        <li><a href="javascript:void(0);">后勤服务</a></li>
+        <li><a href="${ctx }/xkgl/xk.action">选课管理</a></li>
+        <li><a href="javascript:void(0);">我的课表</a></li>
         <li><a href="javascript:void(0);">在线学习</a></li>       
         <li><a href="${ctx }/nsfw/home_frame.action">纳税服务</a> </li>
         <li><a href="javascript:void(0);">我的空间</a></li>
@@ -106,17 +106,19 @@
                 <tr>
                     <td width="76" height="100" align="center" valign="middle">
                         <div class="left-tx">
-                            <c:if test="%{#session.SYS_USER.headImg != null && #session.SYS_USER.headImg != ''}">
-                            	<img src="${ctx}/upload/<s:property value='#session.SYS_USER.headImg'/>" width="70" height="70" />
-                            </c:if><s:else>
+                        <c:choose>
+                            <c:when test="${!empty SYS_STUDENT.stuPic }">
+                            	<img src="${ctx}/upload/student/${SYS_STUDENT.stuPic }.png" width="70" height="70" />
+                            </c:when><c:otherwise>
 								<img src="${ctx}/images/home/gs09.png" width="70" height="70" />
-                        	</s:else>
+                        	</c:otherwise>
+                        </c:choose>
                         </div>
                     </td>
                     <td width="5%"><img src="${ctx}/images/home/gs10.png" width="4" height="59" alt="" /></td>
                     <td width="60%"><table width="95%" border="0" cellpadding="0" cellspacing="0">
                         <tr>
-                            <td colspan="2" style=" font-weight:bold; color:#3a7daa;"><s:property value="#session.SYS_USER.name"/></td>
+                            <td colspan="2" style=" font-weight:bold; color:#3a7daa;">${SYS_STUDENT.stuName }</td>
                         </tr>
                         <tr>
                             <td colspan="2">班级：${SYS_STUDENT.stuClass }</td>
@@ -156,20 +158,20 @@
     <div class="layout_center">
         <div class="lc_grzx1">
             <div class="lc_grzxbt">
-                <h1>我的投诉</h1>
-                <div style="float:right;padding-top:3px;">
-                	<s:a action="home_complainAddUI" namespace="/sys">我要投诉</s:a>&nbsp;&nbsp;
-                </div>
+                <h1>当前课程</h1>
             </div>
             <table width="98%" border="0" align="center">
                 
                 <tr>
                     <td height="23">
-                    xxx标题
+                   	 课程名
                     </td>
-                    <td width="180px">xx受理状态</td>
-                    <td width="180px">是否匿名投诉</td>
-                    <td width="180px">投诉时间</td>
+                    <td width="180px">上课时间</td>
+                    <td width="180px">上课教室</td>
+                    <td width="180px">教师名</td>
+                    <%-- <c:forEach items="" var="">
+                    
+                    </c:forEach> --%>
                 </tr>
                 
             </table>
