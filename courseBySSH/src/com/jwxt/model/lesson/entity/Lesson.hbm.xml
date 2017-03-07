@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.jwxt.model.lesson.entity.Lesson" table="lesson">
+		<id name="lesId" type="java.lang.Integer">
+			<column name="les_id" length="4" />
+			<generator class="increment" />
+		</id>
+		<property name="lesName" type="java.lang.String">
+			<column name="les_name" length="50"/>
+		</property>
+		<property name="lesTime" type="java.lang.String">
+			<column name="les_time" length="100" />
+		</property>
+	</class>
+
+</hibernate-mapping>
+	

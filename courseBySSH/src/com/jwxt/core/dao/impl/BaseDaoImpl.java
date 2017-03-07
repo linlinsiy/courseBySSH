@@ -15,7 +15,8 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport  implements BaseDao<T> {
 
 	Class<T> clazz;
 	public BaseDaoImpl(){
-		ParameterizedType pt = (ParameterizedType)this.getClass().getGenericSuperclass();
+		//带参数的,这里的this是实例化对象的那个子类
+		ParameterizedType pt = (ParameterizedType)this.getClass().getGenericSuperclass();//UserDaoImpl<User>
 		clazz = (Class<T>)pt.getActualTypeArguments()[0];
 	}
 	

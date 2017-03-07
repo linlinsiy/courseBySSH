@@ -3,7 +3,7 @@ package com.jwxt.model.student.entity;
 import java.util.Date;
 
 public class Student{
-	//学号
+	//学号,方便自增,缺点：合并列表时候容易重复
 	private int stuId;
 	//密码
 	private String stuPwd;
