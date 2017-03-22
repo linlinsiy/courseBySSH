@@ -50,7 +50,7 @@ public class LoginAction {
 					//1.3.4、将用户登录信息记录到日志文件
 					log.info("用户名称为：" + student.getStuName() + "的用户登录系统。");
 					//1.3.5、跳转到系统首页（重定向）
-					return "forward:/WEB-INF/jsp/home/home.jsp";
+					return "redirect:/home/frame.action";
 				}else {
 					//1.4、登录失败
 					log.info("账号或密码错误");

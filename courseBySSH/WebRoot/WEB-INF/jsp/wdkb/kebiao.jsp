@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'kebiao.jsp' starting page</title>
+    <title>课程表</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -20,7 +20,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+	<%@include file="/common/header.jsp"%>
+	<script type="text/javascript">
+		//导出
+		function doExportExcel(){
+			window.open("${basePath}wdkb/exportExcel.action");
+		}
+	</script>
   </head>
   
   <body>

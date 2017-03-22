@@ -13,6 +13,9 @@ create table student(
 	stu_pic MEDIUMBLOB
 );
 insert into student(stu_name,stu_pwd) values('林思远','123456');
+update student set stu_gender=true where stu_id=1;
+update student set stu_birth='1994-12-03' where stu_id=1;
+
 select * from student;
 
 create table lesson(

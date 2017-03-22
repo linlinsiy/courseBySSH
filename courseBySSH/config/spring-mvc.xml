@@ -18,4 +18,9 @@
 			expression="org.springframework.stereotype.Service" />
 	</context:component-scan>
 
+	<!-- 配置文件上传MultipartFile接口，定义multipartResolver bean -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="1000000"></property>
+	</bean>
+
 </beans>

@@ -1,7 +1,11 @@
 package com.jwxt.xkgl.action;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,4 +54,20 @@ public class KbAction {
 		httpSession.setAttribute("time", time);
 		return "forward:/WEB-INF/jsp/wdkb/kebiao.jsp";
 	}
+	//导出excel课表
+	@RequestMapping(value="/exportExcel")
+	public void exportExcel(HttpServletResponse response, HttpSession httpSession){
+		try {
+			response.setContentType("application/x-excel");
+			response.setHeader("Content-Disposition", "attachment;filename=" + new String("课表.xls".getBytes(),"ISO-8859-1"));
+			ServletOutputStream outputStream = response.getOutputStream();
+			lessonService.exportExcell((Lesson[][])httpSession.getAttribute("lessonTable"),outputStream);
+			if(outputStream != null){
+				outputStream.close();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+	}
+	
 }
